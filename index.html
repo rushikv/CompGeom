@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+p {
+    width: 50%; 
+    word-wrap: break-word;
+	text-align: justify;
+    text-justify: inter-word;
+}
+
+ol, ul, table { width: 50%; margin-top: -10px; text-align: left; }
+body { 
+	margin:15px;
+	text-align: center;
+	}
+th {
+	padding: 0;
+	margin: 0;
+	}
+table { 
+border-spacing: 0;
+border-collapse: collapse;
+}	
+td{
+    width: 20%; 
+    word-wrap: break-word;
+	padding: 10px}
+</style>
+</head>
+<body>
+<center>
+<h1>Computational Geometry (CSCI-716) Project</h1>
+
+Rushik Vartak (<a href="mailto:rv9981@g.rit.edu" target="_top">rv9981@g.rit.edu</a>)<br>
+Yeshwanth Raja (<a href="mailto:yr8662@g.rit.edu" target="_top">yr8662@g.rit.edu</a>)<br>
+<h2>Visualization of Art Gallery Problem</h2>
+<div>
+<p>We are developing a pedagogical application to visualize the Art gallery problem.<br>
+The Art gallery problem is the problem of determining the minimum number of guards required to guard an Art gallery room. The room is a simple polygon (polygon with no holes and no crossings), and the guards are a set of points inside, on the edges or on the vertices of the polygon. The guards inside the polygon placed at any point are called point guards, and the ones placed on the vertices are called vertex guards. </p>
+
+<p>Finding the exact minimum number of point guards required to guard the entire room inside the room is a NP-hard problem. But, based on Steve Fisk’s proof, we can find the 
+minimum number of vertex guards required to guard the polygonal room with <i>n</i> vertices in <i>O(n log n)</i> time. Fisk claims that to guard a simple polygonal room with <i>n</i> vertices, 
+you never need more than <i>floor(n/3)</i> vertex guards.</p>
+
+<p> We will be developing an application that visualizes this algorithm based on Fisk's proof.<br>
+The algorithm involves 2 major steps:</p>
+<ol>
+<li>Triangulation of the polygon</li>
+<li>3-coloring of the triangulation of polygon</li>
+</ol>
+<p>According to Fisk’s proof, to guard the entire room with minimum vertex guards, the guards should be positioned on the vertices with the color that occurs the least 
+number of times. The figures below show simple visualization of the Algorithm.</p>
+</div>
+<img src="diag1.png" height="25%" width="25%">
+<img src="diag2.png" height="25%" width="25%"><br>
+<img src="diag3.png" height="25%" width="25%">
+<img src="diag4.png" height="25%" width="25%"><br>
+
+<div>
+<p><b>Features of the visualization of the proposed Art gallery problem:<br><br>
+Input:</b></p>
+<ul>
+<li>Ability to draw a simple polygon with n vertices.
+<li>Ability to edit the shape of the polygon by dragging the vertices.
+<li>Ability to add new vertices to the polygon.
+<li>Ability to pause at each step, go back to previous step, and go to the next step of the visualization of the algorithm.
+</ul>
+<p><b>Output:</b></p>
+<ul>
+<li>Displays the minimum number of vertex guards required to guard the polygonal room.
+<li>Displays different variations of the minimum number of vertex guard on the vertices of the polygon.
+<li>Displays the area inside the polygon visible to each guard.
+<li>Step-by-step visualization of the Algorithm, from Triangulation of the polygon to 3-colouring of the Triangulation of the polygon to selection of the guards.
+</ul>
+</div>
+
+<div>
+<p><b>References:</b></p>
+<ul>
+<li><a href="https://plus.maths.org/content/art-gallery-problem">https://plus.maths.org/content/art-gallery-problem</a></li>
+<li><a href="https://www.cs.purdue.edu/homes/aliaga/cs635-10/lec-artgallery.pdf">https://www.cs.purdue.edu/homes/aliaga/cs635-10/lec-artgallery.pdf</a></li>
+<li><a href="https://brilliant.org/wiki/guarding-a-museum/">https://brilliant.org/wiki/guarding-a-museum/</a></li>
+</ul>
+</div>
+
+<div>
+<p><b>Timeline:<br></b></p>
+<table>
+<tr>
+<td><center>Week 6</td>
+<td><center>Week 8</td>
+<td><center>Week 9</td>
+<td><center>Week 10</td>
+<td><center>Week 12</td>
+</tr>
+<tr>
+<th><img src="timeline.png" width="100%" height="100%"></th>
+<th><img src="timeline.png" width="100%" height="100%"></th>
+<th><img src="timeline.png" width="100%" height="100%"></th>
+<th><img src="timeline.png" width="100%" height="100%"></th>
+<th><img src="timeline.png" width="100%" height="100%"></th>
+</tr>
+<tr>
+<td><center>Working CLI Program</td>
+<td><center>Basic Functional Visualization</td>
+<td><center>Additional Features</td>
+<td><center>Graphical Finishing Touches</td>
+<td><center>Web Page & Documentation</td>
+</tr>
+</table>
+</div>
+
+<div>
+<p><b>Duties:<br></b></p>
+<p> All the work related to the project will be mostly accomplished together, but we have tentatively divided the major responsibilities as follows:  
+<table border=1>
+<tr>
+<th><center>Rushik</th>
+<th><center>Yeshwanth</th>
+</tr>
+<tr>
+<td><center>Coding the CLI Program</td>
+<td><center>Coding the Visualization of the CLI Program</td>
+</tr>
+<tr>
+<td><center>Coding Additional features</td>
+<td><center>Adding graphical finishing touches</td>
+</tr>
+<tr>
+<td colspan=2><center>Documentation of web page</center></td>
+</tr>
+</table>
+
+</div>
+
+</center>
+</body>
+</html>
