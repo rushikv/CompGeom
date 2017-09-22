@@ -39,7 +39,7 @@ Yeshwanth Raja (<a href="mailto:yr8662@g.rit.edu" target="_top">yr8662@g.rit.edu
 <p>We are developing a pedagogical application to visualize the Art gallery problem.<br>
 The Art gallery problem is the problem of determining the minimum number of guards required to guard an Art gallery room. The room is a simple polygon (polygon with no holes and no crossings), and the guards are a set of points inside, on the edges or on the vertices of the polygon. The guards inside the polygon placed at any point are called point guards, and the ones placed on the vertices are called vertex guards. </p>
 
-<p>Finding the exact minimum number of point guards required to guard the entire room inside the room is a NP-hard problem. But, based on Steve Fisk’s proof, we can find the 
+<p>Finding the exact minimum number of point guards required to guard the entire room inside the room is a NP-hard problem. But, based on Steve Fisk's proof, we can find the 
 minimum number of vertex guards required to guard the polygonal room with <i>n</i> vertices in <i>O(n log n)</i> time. Fisk claims that to guard a simple polygonal room with <i>n</i> vertices, 
 you never need more than <i>floor(n/3)</i> vertex guards.</p>
 
@@ -49,7 +49,7 @@ The algorithm involves 2 major steps:</p>
 <li>Triangulation of the polygon</li>
 <li>3-coloring of the triangulation of polygon</li>
 </ol>
-<p>According to Fisk’s proof, to guard the entire room with minimum vertex guards, the guards should be positioned on the vertices with the color that occurs the least 
+<p>According to Fisk's proof, to guard the entire room with minimum vertex guards, the guards should be positioned on the vertices with the color that occurs the least 
 number of times. The figures below show simple visualization of the Algorithm.</p>
 </div>
 <img src="diag1.png" height="25%" width="25%">
