@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="main.css" />
 <style> 
 p {
     width: 50%; 
@@ -40,12 +41,12 @@ Yeshwanth Raja (<a href="mailto:yr8662@g.rit.edu" target="_top">yr8662@g.rit.edu
 The Art gallery problem is the problem of determining the minimum number of guards required to guard an Art gallery room. The room is a simple polygon (polygon with no holes and no crossings), and the guards are a set of points inside, on the edges or on the vertices of the polygon. The guards inside the polygon placed at any point are called point guards, and the ones placed on the vertices are called vertex guards. </p>
 
 <p>Finding the exact minimum number of point guards required to guard the entire room inside the room is a NP-hard problem. But, based on Steve Fisk's proof, we can find the 
-minimum number of vertex guards required to guard the polygonal room with <i>n</i> vertices in <i>O(n log n)</i> time. Fisk claims that to guard a simple polygonal room with <i>n</i> vertices, 
+sufficient number of vertex guards required to guard the polygonal room with <i>n</i> vertices in <i>O(n log n)</i> time. Fisk claims that to guard a simple polygonal room with <i>n</i> vertices, 
 you never need more than <i>floor(n/3)</i> vertex guards.</p>
 
 <p> We will be developing an application that visualizes this algorithm based on Fisk's proof.<br>
 The algorithm involves 2 major steps:</p>
-<ol>
+<ol class="paraOL">
 <li>Triangulation of the polygon</li>
 <li>3-coloring of the triangulation of polygon</li>
 </ol>
@@ -57,33 +58,114 @@ number of times. The figures below show simple visualization of the Algorithm.</
 <img src="diag3.png" height="25%" width="25%">
 <img src="diag4.png" height="25%" width="25%"><br>
 
+    <div class="LeftBody">
+    <div>
+        <br><p class="title"><b>Software & Libraries used:</b></p>
+<ul>
+<li>Python 3.6
+<li>Pygame Python Library
+<li>EasyGui Python Library
+<li>Numpy Python Library
+<li>Matplotlib Python Library (used while development only)
+<li>Pycharm IDE
+<li>Pyinstaller tool (to make Windows Executable file)
+<li>Inno Setup compiler (to make Windows Setup file)
+</ul>
+</div>
+    
+    <div>
+    <br><p class="title"><b>Psuedo code:</b>
+<div class = "code">
+    Given a simple polygon<br>
+    Perform Triangulation<br>
+    Perform 3 Coloring of the Triangulated Polygon<br>
+    Choose the color set with minimum vertices <br>(can be more than one and maximum three variations)<br>
+        </div>
+    </div>
+    
 <div>
-<p><b>Features of the visualization of the proposed Art gallery problem:<br><br>
-Input:</b></p>
+    <br><p class="title"><b>Features of the Tool:</b>
 <ul>
 <li>Ability to draw a simple polygon with n vertices.
-<li>Ability to edit the shape of the polygon by dragging the vertices.
-<li>Ability to add new vertices to the polygon.
-<li>Ability to pause at each step, go back to previous step, and go to the next step of the visualization of the algorithm.
-</ul>
-<p><b>Output:</b></p>
-<ul>
-<li>Displays the minimum number of vertex guards required to guard the polygonal room.
-<li>Displays different variations of the minimum number of vertex guard on the vertices of the polygon.
-<li>Displays the area inside the polygon visible to each guard.
-<li>Step-by-step visualization of the Algorithm, from Triangulation of the polygon to 3-colouring of the Triangulation of the polygon to selection of the guards.
+<li>Ability to load a simple polygon from a text file (containing one point on each line, with x and y coordinates seperated by space)
+<li>Ability to detect incorrent input (polygon that is not simple)
+<li>Ability to get the result directly.
+<li>Ability to run the algorithm step-by-step automatically.
+<li>Ability to run the algorithm step-by-step manually with the option of going to previous step.
+<li>Ability to view different variations of the solution.
+<li>Ability to view the visibility of each guard in the solution.
+<li>Displays the sufficient number of vertex guards required to guard the polygonal room.
 </ul>
 </div>
 
+    <div>
+<br><p class="title"><b>Demo:</b></p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ZKl9TDdTMAo?rel=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+    </div>
+        
+    <div>
+<br><p class="title"><b>Download & Run:</b></p>
+The tool and instructions to download and run the tool are available in <a href="https://github.com/rushikv/Art-Gallery-Tool">Art Gallery Github repo</a>
+</div>
+
+
 <div>
-<p><b>References:</b></p>
+    <br><p class="title"><b>Challenges Faced:</b>
 <ul>
+<li>Developing Vertex guard visibility algorithm that works for all possible test cases
+<li>Dealing with floating point precision
+<li>Running step by step visualization in PyGame
+
+</ul>
+</div>
+    
+    
+
+    
+    
+    <div>
+    <br><p class="title"><b>Issues:</b>
+<ul>
+<li>Polygon Visibility is inaccurate in rare cases because of floating point comparisons (issues with precission).
+<li>Triangulation may fail sometimes if the points are placed too close to each other (bug in the ear clipping algorithm).
+<li>Does not always give minimum no. of guards (flaw in the approach, always finding the accurate answer is NP-hard problem).
+
+</ul>
+</div>
+    
+    <div>
+    <br><p class="title"><b>Future Work:</b>
+<ul>
+<li> Efficient and accurate Vertex guard visibility algorithm
+<li> Editing polygon during run time (by drag and drop of edges and vertices)
+<li> Ability to pause the visualization of the algorithm
+<li> More appealing visual effects
+
+</ul>
+</div>
+    
+    
+    
+<div>
+<br><p class="title"><b>References:</b></p>
+<ul>
+<li>Marcelo C. Couto, Cid C. de Souza, and Pedro J. de Rezende. <i>An Exact and Efficient Algorithm for the Orthogonal Art Gallery Problem.</i> In XX Brazilian Symposium on Computer Graphics and Image Processing SIBGRAPI - 2007
+</li>
 <li><a href="https://plus.maths.org/content/art-gallery-problem">https://plus.maths.org/content/art-gallery-problem</a></li>
 <li><a href="https://www.cs.purdue.edu/homes/aliaga/cs635-10/lec-artgallery.pdf">https://www.cs.purdue.edu/homes/aliaga/cs635-10/lec-artgallery.pdf</a></li>
 <li><a href="https://brilliant.org/wiki/guarding-a-museum/">https://brilliant.org/wiki/guarding-a-museum/</a></li>
 </ul>
 </div>
 
+<div>
+<br><p class="title"><b>Credits:</b></p>
+<ul>
+    <li>Ear Clipping Triangulation (<a href="https://github.com/bjorkegeek/polytri">Polytri</a>). Thanks to David Björkevik (<a href="https://github.com/bjorkegeek">bjorkegeek</a>)</li>
+    <li>M-Coloring using backtracking (<a href="https://github.com/divyanshumehta/graph-algo">M-Coloring</a>). Thanks to Divyanshu Mehta (<a href="https://github.com/divyanshumehta">divyanshumehta</a>)</li>
+</ul>
+</div>
+    
+<!--
 <div>
 <p><b>Timeline:<br></b></p>
 <table>
@@ -110,28 +192,34 @@ Input:</b></p>
 </tr>
 </table>
 </div>
+-->
 
 <div>
-<p><b>Duties:<br></b></p>
-<p> All the work related to the project will be mostly accomplished together, but we have tentatively divided the major responsibilities as follows:  
+<br><p class="title"><b>Team mates contributions:</b></p>
+  <br>
 <table border=1>
 <tr>
 <th><center>Rushik</th>
 <th><center>Yeshwanth</th>
 </tr>
 <tr>
-<td><center>Coding the CLI Program</td>
+<td><center>Coding the Main Algorithm</td>
 <td><center>Coding the Visualization of the CLI Program</td>
 </tr>
 <tr>
-<td><center>Coding Additional features</td>
+<td><center>Design and Implementing Polygon Visibility Algorithm</td>
 <td><center>Adding graphical finishing touches</td>
 </tr>
 <tr>
-<td colspan=2><center>Documentation of web page</center></td>
+<td><center>Adding Features like Auto-Visualization, Manual Visualization, Load polygon from file, Incorrect input detection, Viewing of variations of solution and guard visibility</td>
+<td><center>Testing & Debugging</td>
+</tr>
+    
+<tr>
+<td colspan=2><center>Documentation of web page & Presentations</center></td>
 </tr>
 </table>
-
+</div>
 </div>
 
 </center>
